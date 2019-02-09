@@ -1,0 +1,81 @@
+﻿spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: config-provider-8084
+  datasource:
+    username: root
+    password: 445221
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://112.74.185.88:3306/cloud-demo-1?serverTimezone=GMT%2B8
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: provider-8084
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+---
+spring:
+  profiles: test
+  application:
+    name: config-provider-8088
+  datasource:
+    username: root
+    password: 445221
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://112.74.185.88:3306/cloud-demo-2?serverTimezone=GMT%2B8
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+server:
+  port: 8088
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: provider-8088
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
