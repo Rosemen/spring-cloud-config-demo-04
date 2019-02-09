@@ -3,6 +3,9 @@
     active: dev
 
 ---
+server:
+  port: 8084
+
 spring:
   profiles: dev
   application:
@@ -12,6 +15,7 @@ spring:
     password: 445221
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://112.74.185.88:3306/cloud-demo-1?serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -29,9 +33,6 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-
-server:
-  port: 8084
 
 eureka:
   client:
@@ -42,6 +43,9 @@ eureka:
     instance-id: provider-8084
 
 ---
+server:
+  port: 8088
+
 spring:
   profiles: test
   application:
@@ -51,6 +55,7 @@ spring:
     password: 445221
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://112.74.185.88:3306/cloud-demo-2?serverTimezone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -66,12 +71,8 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-
-server:
-  port: 8088
 
 eureka:
   client:
