@@ -27,6 +27,9 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
 server:
   port: 8084
 
@@ -37,9 +40,6 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: provider-8084
-
-mybatis:
-  mapper-locations: classpath:mybatis/mapper/*.xml
 
 ---
 spring:
@@ -66,6 +66,10 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
 server:
   port: 8088
 
@@ -76,6 +80,3 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: provider-8088
-
-mybatis:
-  mapper-locations: classpath:mybatis/mapper/*.xml
