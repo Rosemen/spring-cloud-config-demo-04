@@ -1,0 +1,35 @@
+﻿spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8761.com:8761/eureka/
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    hostname: eureka-server-8761
+
+server:
+  port: 8761
+
+---
+spring:
+  profiles: test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8762.com:8762/eureka/
+    fetch-registry: false
+    register-with-eureka: false
+  instance:
+    hostname: eureka-server-8762
+
+server:
+  port: 8762
