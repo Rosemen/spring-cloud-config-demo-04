@@ -4,17 +4,17 @@
 
 ---
 server:
-  port: 8084
+  port: 8088
 
 spring:
   profiles: dev
   application:
-    name: config-provider-8084
+    name: config-provider-8088
   datasource:
     username: root
     password: 445221
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://112.74.185.88:3306/cloud-demo-1?serverTimezone=GMT%2B8
+    url: jdbc:mysql://112.74.185.88:3306/cloud-demo-2?serverTimezone=GMT%2B8
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     minIdle: 5
@@ -40,4 +40,4 @@ eureka:
       defaultZone: http://eureka8761.com:8761/eureka/
   instance:
     prefer-ip-address: true
-    instance-id: provider-8084
+    instance-id: provider-8088
