@@ -9,7 +9,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: config-provider-8088
+    name: config-provider-8084
   datasource:
     username: root
     password: 445221

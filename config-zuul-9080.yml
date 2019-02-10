@@ -23,10 +23,7 @@ zuul:
   routes:
     firstRoute:
       path: /provider-8084/**
-      serviceId: config-provider-8084
-    secondRoute:
-      path: /provider-8088/**
-      serviceId: config-provider-8088
+      serviceId: config-ribbon-consumer
     
   ignored-services: "*"
   prefix: /cloud
