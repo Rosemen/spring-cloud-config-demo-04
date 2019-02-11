@@ -22,7 +22,7 @@ eureka:
 zuul:
   routes:
     firstRoute:
-      path: /provider-8084/**
+      path: /consumer/**
       serviceId: config-ribbon-consumer
     
   ignored-services: "*"

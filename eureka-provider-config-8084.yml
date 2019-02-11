@@ -8,6 +8,11 @@ server:
 
 spring:
   profiles: dev
+  rabbitmq:
+    host: 112.74.185.88
+    port: 5672
+    username: guest
+    password: guest
   application:
     name: config-provider-8084
   datasource:
@@ -41,3 +46,9 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: provider-8084
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
