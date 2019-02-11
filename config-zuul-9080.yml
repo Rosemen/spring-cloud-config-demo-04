@@ -11,14 +11,6 @@ spring:
   application:
     name: config-zuul-9080
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka8761.com:8761/eureka/
-  instance:
-    prefer-ip-address: true
-    instance-id: zuul9080.com
-
 zuul:
   routes:
     firstRoute:
